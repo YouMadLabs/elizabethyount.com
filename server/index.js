@@ -116,7 +116,7 @@ app.prepare().then(() => {
     if (pathname === '/sw.js') {
       res.setHeader('content-type', 'text/javascript');
       fs.createReadStream('./public/serviceWorker.js').pipe(res);
-    } else if (pathname === '/manifest.json') {
+    } else if (pathname === '/manifest.json' && config.server.progressive) {
       res.setHeader('content-type', 'application/json');
       fs.createReadStream('./public/manifest.json').pipe(res);
     } else {
