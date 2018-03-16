@@ -1,5 +1,6 @@
 const path = require('path');
 const glob = require('glob');
+const config = require('./config');
 
 const pushRules = (nextConfig = {}, rules = {}) => {
   return Object.assign({}, nextConfig, {
@@ -88,7 +89,4 @@ const loadWith = (options) => {
   return nextConfig;
 };
 
-module.exports = loadWith({
-  style:true,
-  images:true
-});
+module.exports = loadWith(config.webpack);
