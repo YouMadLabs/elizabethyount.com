@@ -1,7 +1,7 @@
 const path = require('path');
 const glob = require('glob');
 
-const withImages = (nextConfig = {}) => {
+const pushRules = (nextConfig = {}, rules = {}) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
       if (!options.defaultLoaders) {
@@ -10,20 +10,7 @@ const withImages = (nextConfig = {}) => {
         )
       }
 
-      config.module.rules.push({
-        test: /\.(jpe?g|png|svg|gif)$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192,
-              fallback: "file-loader",
-              publicPath: "/static/",
-              name: "[name].[ext]"
-            }
-          }
-        ]
-      });
+      config.module.rules.push(rules);
 
       if (typeof nextConfig.webpack === 'function') {
         return nextConfig.webpack(config, options)
@@ -34,51 +21,56 @@ const withImages = (nextConfig = {}) => {
   });
 };
 
-const withStyle = (nextConfig = {}) => {
-  return Object.assign({}, nextConfig, {
-    webpack(config, options) {
-      if (!options.defaultLoaders) {
-        throw new Error(
-          'You need to upgrade to NextJS 5.0.0 or above.'
-        )
+const withImages = (nextConfig = {}) => {
+  return pushRules(nextConfig, {
+    test: /\.(jpe?g|png|svg|gif)$/,
+    use: [
+      {
+        loader: "url-loader",
+        options: {
+          limit: 8192,
+          fallback: "file-loader",
+          publicPath: "/static/",
+          name: "[name].[ext]"
+        }
       }
-
-      config.module.rules.push(
-        {
-          test: /\.(css|scss)/,
-          loader: 'emit-file-loader',
-          options: {
-            name: '[path][name].[ext]'
-          }
-        }
-      ,
-        {
-          test: /\.css$/,
-          use: ['babel-loader', 'raw-loader', 'postcss-loader']
-        }
-      ,
-        {
-          test: /\.s(a|c)ss$/,
-          use: ['babel-loader', 'raw-loader', 'postcss-loader',
-            { loader: 'sass-loader',
-              options: {
-                includePaths: ['styles', 'node_modules']
-                  .map((d) => path.join(__dirname, d))
-                  .map((g) => glob.sync(g))
-                  .reduce((a, c) => a.concat(c), [])
-              }
-            }
-          ]
-        }
-      )
-
-      if (typeof nextConfig.webpack === 'function') {
-        return nextConfig.webpack(config, options)
-      }
-
-      return config
-    }
+    ]
   });
+};
+
+const withStyle = (nextConfig = {}) => {
+  let cssRule = {
+    test: /\.css$/,
+    use: ['babel-loader', 'raw-loader', 'postcss-loader']
+  };
+
+  let scssRule = {
+    test: /\.(css|scss)/,
+    loader: 'emit-file-loader',
+    options: {
+      name: '[path][name].[ext]'
+    }
+  }
+
+  let extraRule = {
+    test: /\.s(a|c)ss$/,
+    use: ['babel-loader', 'raw-loader', 'postcss-loader',
+      { loader: 'sass-loader',
+        options: {
+          includePaths: ['styles', 'node_modules']
+            .map((d) => path.join(__dirname, d))
+            .map((g) => glob.sync(g))
+            .reduce((a, c) => a.concat(c), [])
+        }
+      }
+    ]
+  }
+
+  nextConfig = pushRules(nextConfig, cssRule);
+  nextConfig = pushRules(nextConfig, scssRule);
+  nextConfig = pushRules(nextConfig, extraRule);
+
+  return nextConfig;
 };
 
 const loadWith = (options) => {
