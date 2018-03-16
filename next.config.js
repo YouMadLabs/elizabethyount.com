@@ -52,7 +52,7 @@ const withStyle = (nextConfig = {}) => {
     }
   }
 
-  let extraRule = {
+  let sassRule = {
     test: /\.s(a|c)ss$/,
     use: ['babel-loader', 'raw-loader', 'postcss-loader',
       { loader: 'sass-loader',
@@ -68,7 +68,7 @@ const withStyle = (nextConfig = {}) => {
 
   nextConfig = pushRules(nextConfig, cssRule);
   nextConfig = pushRules(nextConfig, scssRule);
-  nextConfig = pushRules(nextConfig, extraRule);
+  nextConfig = pushRules(nextConfig, sassRule);
 
   return nextConfig;
 };
