@@ -80,11 +80,10 @@ const loadWith = (options) => {
     }
   }
 
-  if (options.style)
-    nextConfig = withStyle(nextConfig)
-
-  if (options.images)
-    nextConfig = withImages(nextConfig)
+  switch(true) {
+    case options.style: nextConfig = withStyle(nextConfig);
+    case options.images: nextConfig = withImages(nextConfig); break;
+  }
 
   return nextConfig;
 };
