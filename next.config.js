@@ -23,19 +23,75 @@ const pushRules = (nextConfig = {}, rules = {}) => {
 };
 
 const withImages = (nextConfig = {}) => {
-  return pushRules(nextConfig, {
-    test: /\.(jpe?g|png|svg|gif)$/,
-    use: [
-      {
-        loader: "url-loader",
-        options: {
-          limit: 8192,
-          fallback: "file-loader",
-          publicPath: "/static/",
-          name: "[name].[ext]"
+  var loaders = new Array();
+
+  if (process.env.NODE_ENV == 'production') {
+    loaders.push({
+      loader: "image-trace-loader",
+      options: {
+        color:'#F0F0F0',
+      }
+    });
+
+    loaders.push({
+      loader: 'sqip-loader',
+      options: {
+        numberOfPrimitives: 20
+      }
+    });
+
+    loaders.push({
+      loader: "url-loader",
+      options: {
+        limit: 10 * 1024,
+        noquotes: true,
+        fallback: "file-loader",
+        publicPath: "/_next/static/images/",
+        outputPath: "static/images/",
+        name: "[hash].[ext]"
+      }
+    });
+
+    loaders.push({
+      loader: 'image-webpack-loader',
+      options: {
+        mozjpeg: {
+          progressive: true,
+          quality: 65
+        },
+        optipng: {
+          enabled: true,
+        },
+        pngquant: {
+          quality: '65-90',
+          speed: 4
+        },
+        gifsicle: {
+          interlaced: false,
+        },
+        webp: {
+          quality: 75
         }
       }
-    ]
+    });
+  }
+
+  if (process.env.NODE_ENV == 'development') {
+    loaders.push({
+      loader: "url-loader",
+      options: {
+        limit: 10 * 1024,
+        noquotes: true,
+        fallback: "file-loader",
+        useRelativePath: true,
+        name: "[name].[ext]"
+      }
+    });
+  }
+
+  return pushRules(nextConfig, {
+    test: /\.(jpe?g|png|svg|gif)$/,
+    use: loaders
   });
 };
 
