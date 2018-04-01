@@ -17,16 +17,16 @@ $ yarn install
 
 # Building:
 ## Development:
-### Client side routing only
+### Hot reload
 
 ```bash
-$ yarn dev-offline
+$ yarn dev-hot
 ```
 
 Or
 
 ```bash
-$ npm run dev-offline
+$ npm run dev-hot
 ```
 
 ### Server Side Rendering
@@ -72,3 +72,27 @@ Or
 ```bash
 $ npm run start-prod
 ```
+
+# Images support
+The following lines :
+
+```javascript
+const picture = require('../static/my-picture.jpg')
+console.log(picture)
+```
+
+Will produce the following result :
+```javascript
+{
+  src:{
+    preview:'data:image/svg+xml...'
+    src:'...jpg'
+  },
+  trace:'data:image/svg+xml...'
+}
+```
+
+The trace and the preview are light svg files meant to be used as placeholder during pictures lazy loading.
+The trace is a flat shape which you can define the color in the project webpack settings.
+The preview is a blur version of your picture.
+The src is the normal url of your file.
