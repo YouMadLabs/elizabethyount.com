@@ -74,6 +74,23 @@ $ npm run start-prod
 ```
 
 # Images support
+## Development
+The following lines :
+
+```javascript
+const picture = require('../static/my-picture.jpg')
+console.log(picture)
+```
+
+Will produce the following result :
+```javascript
+"...jpg"
+```
+
+###Lazy loading
+If you want to lazy load your images, note that **the production environment will generate placeholders**, see the production section for more infos.
+
+## Production
 The following lines :
 
 ```javascript
@@ -96,3 +113,5 @@ The trace and the preview are light svg files meant to be used as placeholder du
 The trace is a flat shape which you can define the color in the project webpack settings.
 The preview is a blur version of your picture.
 The src is the normal url of your file.
+
+Don't be surprised if **the placeholders are not working in development**, they are disabled on purpose to keep the hot reloading fast.
