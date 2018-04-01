@@ -29,7 +29,7 @@ const withImages = (nextConfig = {}) => {
     loaders.push({
       loader: "image-trace-loader",
       options: {
-        color:'#F0F0F0',
+        color:config.webpack.traceColor,
       }
     });
 
