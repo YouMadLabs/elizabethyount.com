@@ -87,8 +87,7 @@ Will produce the following result :
 "...jpg"
 ```
 
-###Lazy loading
-
+### Lazy loading
 If you want to lazy load your images, note that **the production environment will generate placeholders**, see the production section for more infos.
 
 ## Production
