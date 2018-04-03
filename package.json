@@ -39,5 +39,9 @@
     "react-dom": "^16.2.0",
     "sass-loader": "^6.0.7",
     "url-loader": "^1.0.1"
+  },
+  "devDependencies": {
+    "image-trace-loader": "^0.1.0",
+    "sqip-loader": "^0.1.0"
   }
 }
