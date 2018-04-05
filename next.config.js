@@ -26,19 +26,21 @@ const withImages = (nextConfig = {}) => {
   var loaders = new Array();
 
   if (process.env.NODE_ENV == 'production') {
-    loaders.push({
-      loader: "image-trace-loader",
-      options: {
-        color:config.webpack.traceColor,
-      }
-    });
+    if (config.webpack.imagesPlaceholders) {
+      loaders.push({
+        loader: "image-trace-loader",
+        options: {
+          color:config.webpack.traceColor,
+        }
+      });
 
-    loaders.push({
-      loader: 'sqip-loader',
-      options: {
-        numberOfPrimitives: 20
-      }
-    });
+      loaders.push({
+        loader: 'sqip-loader',
+        options: {
+          numberOfPrimitives: 20
+        }
+      });
+    }
 
     loaders.push({
       loader: "url-loader",
