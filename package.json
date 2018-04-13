@@ -38,6 +38,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "sass-loader": "^6.0.7",
+    "spdy": "^3.4.7",
     "url-loader": "^1.0.1"
   },
   "devDependencies": {

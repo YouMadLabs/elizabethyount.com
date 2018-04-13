@@ -4,7 +4,7 @@ const compression = require('compression');
 const mcache      = require('memory-cache');
 const fs          = require('fs');
 const http        = require('http');
-const https       = require('https');
+const spdy        = require('spdy');
 const {parse}     = require('url');
 
 //Environment
@@ -98,7 +98,7 @@ const cache       = (duration) => {
 app.prepare().then(() => {
   const serverApp = express().use(compression());
   const httpServer = http.createServer(serverApp);
-  const httpsServer = https.createServer({key: privateKey, cert: certificate}, serverApp);
+  const httpsServer = spdy.createServer({key: privateKey, cert: certificate}, serverApp);
 
   serverApp.get('/p/:id', cache(10), (req, res) => {
     const actualPage = '/post'
