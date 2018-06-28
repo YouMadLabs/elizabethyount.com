@@ -45,7 +45,7 @@ if (env == "production") {
 
   // Setting SSL Certificate and handling potential errors
   try {
-    certificate = fs.readFileSync('/etc/letsencrypt/live/'+domain+'/fullchain.pem', 'utf8'); // --> https://letsencrypt.org/
+    certificate = fs.readFileSync('/etc/letsencrypt/live/'+domain+'/chain.pem', 'utf8'); // --> https://letsencrypt.org/
     console.log('Successfuly retrieving SSL certificate\n', certificate);
   } catch(err) {
     switch(err.code) {
