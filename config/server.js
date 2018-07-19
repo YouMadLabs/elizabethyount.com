@@ -1,5 +1,5 @@
 const serverConfig = {
-  domain: 'mydomain.com',
+  domain: 'elizabethyount.com',
   progressive: true
 }
 
