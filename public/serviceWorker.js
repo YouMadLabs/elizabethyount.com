@@ -1,4 +1,4 @@
-var CACHE = 'cache-myapp';
+var CACHE = 'cache-ey';
 
 // On install, cache some resource.
 self.addEventListener('install', function(evt) {

@@ -1,8 +1,8 @@
 {
   "manifest_version":1,
-  "name": "myapp",
+  "name": "elizabethportfolio",
   "version":"1.0",
-  "short_name": "MA",
+  "short_name": "EY",
   "lang": "en-US",
   "start_url": "/",
   "homepage_url": "/",
@@ -23,24 +23,6 @@
     }
   ],
   "prefer_related_applications": true,
-  "related_applications": [
-    {
-      "platform": "play",
-      "url": "https://play.google.com/store/apps/details?id=com.my.app",
-      "id": "com.my.app",
-      "min_version": "1",
-      "fingerprints": [
-        {
-          "type": "sha256_cert",
-          "value": "92:5A:39:05:C5:B9:EA:BC:71:48:5F:F2"
-        }
-      ]
-    },
-    {
-      "platform": "itunes",
-      "url": "https://itunes.apple.com/app/my-app/id123456789"
-    }
-  ],
   "background_color": "#FAFAFA",
   "screenshots": [
     {
