@@ -2,16 +2,11 @@ import Header from '../Header'
 import Footer from '../Footer'
 
 const gridStyle = {
+  minHeight: "100%",
   display: "grid",
-  "grid-template-columns": "50px 1fr auto 1fr 50px",
-  "grid-template-rows": "repeat(5, minmax(50px, max-content))",
+  "grid-template-columns": "50px repeat(3, minmax(1fr, max-content)) 50px",
+  "grid-template-rows": "50px auto 1fr auto 50px",
   "grid-gap": "20px",
-};
-
-const layoutStyle = {
-  width: "100vw",
-  height: "100vh",
-  padding: "20px 20px 20px 20px"
 };
 
 const Layout = (props) => (
@@ -28,16 +23,15 @@ const Layout = (props) => (
       body {
         background: white;
       }
-      h1, h2, h3,
-      a,
-      p {
-        font-family: "Open Sans Semibold";
-        color: #333;
-        text-align: center;
-      }
       html,
       body {
-          margin: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: "Open Sans Semibold", Helvetica, Arial, sans-serif;
+        color: #333;
       }
       a {
         color: #666;

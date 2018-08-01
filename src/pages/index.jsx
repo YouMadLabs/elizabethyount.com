@@ -1,14 +1,18 @@
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
+import style from './style.css';
 
 import Layout from "../components/Layout";
 
 const ProjectSection = ({ project }) => (
   <div>
-    <img src={project.image}/>
     <Link as={`/projects/${project.id}`} href={`/project?title=${project.id}`}>
-      <a> {project.title} </a>
+      <div className="thumbnail">
+        <img src={project.image}/>
+        <p> {project.title} </p>
+      </div>
     </Link>
+    <style dangerouslySetInnerHTML={{ __html: style }} />
   </div>
 );
 
@@ -31,25 +35,24 @@ class Index extends React.Component {
     return (
       <Layout>
         {/* DOM */}
-        <ul>
+        <div className="projects">
           {getProjects().map(project => (
             <ProjectSection key={project.id} project={project} />
           ))}
-        </ul>
+        </div>
 
         {/* Styling */}
         <style jsx>{`
-          ul {
+          .projects {
             padding: 0;
             grid-column-start: 2;
             grid-column-end: 5;
             grid-row-start: 2;
             grid-row-end: 5;
-          }
-
-          li {
-            list-style: none;
-            margin: 5px 0;
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-row-gap: 40px;
           }
         `}</style>
       </Layout>
@@ -62,57 +65,27 @@ function getProjects() {
     {
       id: "rac",
       title: "REGIONAL ACCEPTANCE APP | BB&T",
-      subtitle:
-        "Lorem ipsum dolor sit amet, idque mollis consetetur at vis, eam at sale\
-      atqui. Sapientem qualisque reprehendunt eu his, ne sit oratio accusam. In\
-      has ocurreret vulputate, etiam sadipscing ut per, his ad regione singulis\
-      scriptorem. Sit an erroribus adipiscing. No amet ridens pri, duo persecuti\
-      adolescens no. 1",
-      image: ""
+      image: "../static/thumbnails/rac-thumbnail.png"
     },
     {
       id: "salesforce-cpq",
       title: "CPQ APP | SALESFORCE",
-      subtitle:
-        "Lorem ipsum dolor sit amet, idque mollis consetetur at vis, eam at sale\
-        atqui. Sapientem qualisque reprehendunt eu his, ne sit oratio accusam. In\
-        has ocurreret vulputate, etiam sadipscing ut per, his ad regione singulis\
-        scriptorem. Sit an erroribus adipiscing. No amet ridens pri, duo persecuti\
-        adolescens no. 1",
-      image: ""
+      image: "../static/thumbnails/cpq-thumbnail.png"
     },
     {
       id: "freelance",
       title: "FREELANCE WORK",
-      subtitle:
-        "Lorem ipsum dolor sit amet, idque mollis consetetur at vis, eam at sale\
-        atqui. Sapientem qualisque reprehendunt eu his, ne sit oratio accusam. In\
-        has ocurreret vulputate, etiam sadipscing ut per, his ad regione singulis\
-        scriptorem. Sit an erroribus adipiscing. No amet ridens pri, duo persecuti\
-        adolescens no. 1",
-      image: ""
+      image: "../static/thumbnails/freelance-thumbnail.png"
     },
-    {
-      id: "ca",
-      title: "PROJECT MANAGEMENT APP | CA TECHNOLOGIES",
-      subtitle:
-        "Lorem ipsum dolor sit amet, idque mollis consetetur at vis, eam at sale\
-        atqui. Sapientem qualisque reprehendunt eu his, ne sit oratio accusam. In\
-        has ocurreret vulputate, etiam sadipscing ut per, his ad regione singulis\
-        scriptorem. Sit an erroribus adipiscing. No amet ridens pri, duo persecuti\
-        adolescens no. 1",
-      image: ""
-    },
+    // {
+    //   id: "ca",
+    //   title: "PROJECT MANAGEMENT APP | CA TECHNOLOGIES",
+    //   image: "../static/thumbnails/ca-thumbnail.png"
+    // },
     {
       id: "salesforce-promotions",
       title: "PROMOTIONS APP | SALESFORCE",
-      subtitle:
-        "Lorem ipsum dolor sit amet, idque mollis consetetur at vis, eam at sale\
-        atqui. Sapientem qualisque reprehendunt eu his, ne sit oratio accusam. In\
-        has ocurreret vulputate, etiam sadipscing ut per, his ad regione singulis\
-        scriptorem. Sit an erroribus adipiscing. No amet ridens pri, duo persecuti\
-        adolescens no. 1",
-      image: ""
+      image: "../static/thumbnails/promotions-thumbnail.png"
     }
   ];
   
@@ -120,7 +93,6 @@ function getProjects() {
 
 Index.getInitialProps = async function() {
   // const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
-  // TODO: We will want this to be in a central area to reuse elsewhere
   const data = []
 
   return {

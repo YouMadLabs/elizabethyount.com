@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import style from './style.css';
+
 // Style
 const linkStyle = {
   color: "#AAA",
@@ -13,24 +15,21 @@ function getYear() {
 }
 
 const Footer = () => (
-  <footer>
-    <Link href="/contact">
+  <footer className="footer">
+    <Link href="mailto:elizabethydesign@gmail.com?Subject=Hello">
       <a style={linkStyle}>Contact</a>
     </Link>
-    <Link href="https://youmadlabs.com" target="_blank">
+    <Link href="https://youmadlabs.com">
       <a style={linkStyle}>© {getYear()} You Mad Labs Inc.</a>
     </Link>
+
+    <style dangerouslySetInnerHTML={{ __html: style }} />
     <style jsx>
       {`
         a {
           display: inline-block;
           text-align: center;
-        }
-        footer {
-          position:absolute;
-          left:0;
-          bottom:0;
-          right:0;
+          text-transform: initial;
         }
       `}
     </style>
