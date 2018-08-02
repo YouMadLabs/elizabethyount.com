@@ -21,7 +21,7 @@ const style = {
   gridRow: "2 / span 3",
   display: "inline-grid",
   gridTemplateColumns: "50px 1fr 30px 1fr 30px 1fr 50px",
-  gridTemplateRows: "50px 1fr 30px 1fr 30px 1fr 50px",
+  gridTemplateRows: "50px minmax(30px, auto) 1fr 30px 1fr 30px 1fr 50px",
   whiteSpace: "pre-wrap",
   lineHeight: "1.7em",
 };
@@ -35,42 +35,42 @@ const titleStyle = {
 
 const firstLeftTextStyle = {
   gridColumn: "2 / span 3",
-  gridRow: "2",
+  gridRow: "3",
   textAlign: "left",
   textTransform: "initial",
 };
 
 const firstRightImageStyle = {
   gridColumn: "6 / span 1",
-  gridRow: "2",
+  gridRow: "3",
   height: "600px",
   width: "300px",
 };
 
 const rightTextStyle = {
   gridColumn: "4 / span 3",
-  gridRow: "4",
+  gridRow: "5",
   textAlign: "left",
   textTransform: "initial",
 };
 
 const leftImageStyle = {
   gridColumn: "2 / span 1",
-  gridRow: "4",
+  gridRow: "5",
   height: "600px",
   width: "300px",
 };
 
 const secondLeftTextStyle = {
   gridColumn: "2 / span 3",
-  gridRow: "6",
+  gridRow: "7",
   textAlign: "left",
   textTransform: "initial",
 };
 
 const secondRightImageStyle = {
   gridColumn: "6 / span 1",
-  gridRow: "6",
+  gridRow: "7",
   height: "600px",
   width: "600px",
 };

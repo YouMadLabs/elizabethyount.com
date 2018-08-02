@@ -3,17 +3,17 @@ import Layout from '../components/Layout';
 const project = {
   id: "freelance",
   title: "Freelance Work",
+  message: "My current freelance projects focus on improving user experience to optimize conversion rates for enterprise e-commerce clients. I design new solutions for lower-performing screens like forms, shopping carts, and checkout flows and validate conversion improvements with Optimizly X.\
+  \n\nHere are a few examples of the mobile and Web designs I've worked on recently.",
   image1: "../static/freelance/ga-phone.png",
-  heading1: "Background",
-  text1: "A major initiative during my time at SteelBrick was a mobile presence on Salesforce1. The existing tablet-only app was data-heavy and not optimized for mobile, and major clients were increasingly demanding an intuitive solution for their mobile workforces. Key goals included Lightning Certification and feature parity between Web and mobile platforms.\
-  \n\nI looked at the existing tablet-only app and identified the quickest, most targeted ways to improve the experience. These included usability enhancements, like larger touch targets, mobile optimized text layouts, and eliminating horizontal scrolling, as well as feature enhancements to meet customer requests, and integrating native Salesforce1 interactions.",
+  heading1: "General Assembly",
+  text1: "In recent designs for the General Assembly responsive site, changing the registration CTA from a link at the bottom of the page to a sticky layout button on mobile viewports increased click-through rates by 22%.",
   image2: "../static/freelance/atlassian.png",
-  heading2: "Prototyping and Testing",
-  text2: "I used quick and frequent user testing to validate our new designs: a mix of high- and low-fidelity prototypes and a combination of remote, unmoderated testing, in-person user interviews, and customer feedback helped me catch problems early and iterate on an ideal design.\
-  \n\nTesting showed some new data — existing users weren't interested in conducting many of the more extensive, time-consuming processes on  mobile devices, and instead wanted mobile support for a handful of key processes they most frequently performed out in the field. The final product reflected streamlined functionality and prioritized seamless interactions.",
+  heading2: "Atlassian",
+  text2: "Bringing educational content above the fold led to decreased drop-off rates.",
   image3: "../static/freelance/ab.png",
-  heading3: "Tools Used",
-  text3: "Sketch, InVision, Balsamiq",
+  heading3: "Alexis Bittar",
+  text3: "Alexis Bittar's checkout process was initially a long, one-page form. Conversions increased when I created a paginated flow with clear length expectations for Web and mobile (below).",
 };
 
 const style = {
@@ -21,64 +21,73 @@ const style = {
   gridRow: "2 / span 3",
   display: "inline-grid",
   gridTemplateColumns: "50px 1fr 30px 1fr 30px 1fr 50px",
-  gridTemplateRows: "50px 1fr 30px 1fr 30px 1fr 50px",
+  gridTemplateRows: "50px minmax(30px, auto) 1fr 30px 1fr 30px 1fr 50px",
   whiteSpace: "pre-wrap",
   lineHeight: "1.7em",
 };
 
 const titleStyle = {
-  gridColumn: "1 / span 6",
+  gridColumn: "2 / span 5",
   gridRow: "1",
+  textAlign: "center",
+  textTransform: "initial",
+  alignSelf: "center",
+};
+
+const messageStyle = {
+  gridColumn: "2 / span 5",
+  gridRow: "2",
   textAlign: "center",
   textTransform: "initial",
 };
 
 const firstLeftTextStyle = {
   gridColumn: "2 / span 3",
-  gridRow: "2",
+  gridRow: "3",
   textAlign: "left",
   textTransform: "initial",
 };
 
 const firstRightImageStyle = {
   gridColumn: "6 / span 1",
-  gridRow: "2",
+  gridRow: "3",
   height: "600px",
   width: "300px",
 };
 
 const rightTextStyle = {
   gridColumn: "4 / span 3",
-  gridRow: "4",
+  gridRow: "5",
   textAlign: "left",
   textTransform: "initial",
 };
 
 const leftImageStyle = {
   gridColumn: "2 / span 1",
-  gridRow: "4",
+  gridRow: "5",
   height: "600px",
-  width: "300px",
+  width: "600px",
 };
 
 const secondLeftTextStyle = {
   gridColumn: "2 / span 3",
-  gridRow: "6",
+  gridRow: "7",
   textAlign: "left",
   textTransform: "initial",
 };
 
 const secondRightImageStyle = {
   gridColumn: "6 / span 1",
-  gridRow: "6",
+  gridRow: "7",
   height: "600px",
-  width: "600px",
+  width: "300px",
 };
 
 export default () => (
   <Layout>
     <div style={style}>
       <h1 style={titleStyle}>{project.title}</h1>
+      <p style={messageStyle}>{project.message}</p>
       <img src={project.image1} style={firstRightImageStyle}/>
       <section style={firstLeftTextStyle}>
         <h2>{project.heading1}</h2>
