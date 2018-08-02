@@ -126,12 +126,11 @@ app.prepare().then(() => {
 
     serverApp.get('*', cache(10), (req, res) => {
       const parsedUrl = parse(req.url, true);
-      const {
-        pathname
-      } = parsedUrl;
+      const { pathname } = parsedUrl;
 
-      if (env == 'production' && !req.connection.encrypted)
+      if (env == 'production' && !req.connection.encrypted) {
         res.redirect('https://' + req.headers.host + req.url);
+      }
 
       if (pathname === '/sw.js') {
         res.setHeader('content-type', 'text/javascript');

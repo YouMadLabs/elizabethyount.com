@@ -1,5 +1,6 @@
 nodes_modules
 .next
+.DS_Store
 src/.next
 yarn-error.log
 node_modules

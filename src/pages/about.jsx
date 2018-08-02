@@ -1,25 +1,24 @@
 import Layout from '../components/Layout';
-
 import image from '../static/about.jpg';
 
 const style = {
-  "grid-column": "2 / span 3",
-  "grid-row": "2 / span 3",
+  gridColumn: "2 / span 3",
+  gridRow: "2 / span 3",
   display: "inline-grid",
-  "grid-template-columns": "repeat(5, 1fr)",
-  "grid-template-rows": "repeat(6, 1fr)",
+  gridTemplateColumns: "repeat(5, 1fr)",
+  gridTemplateRows: "repeat(5, 1fr)",
 };
 
 const textStyle = {
-  "grid-column": "3 / span 2",
-  "grid-row": "1 / span 3",
+  gridColumn: "3 / span 2",
+  gridRow: "1 / span 3",
   textAlign: "left",
   textTransform: "initial",
 };
 
 const imageStyle = {
-  "grid-column": "2 / span 1",
-  "grid-row": "1 / span 3",
+  gridColumn: "2 / span 1",
+  gridRow: "1 / span 3",
   height: "400px",
   width: "300px",
   marginRight: "50px",

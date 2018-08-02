@@ -11,7 +11,7 @@ const linkStyle = {
 };
 
 const titleStyle = {
-  "grid-column": "4 / span 3",
+  gridColumn: "4 / span 3",
   marginTop: 0,
   marginBottom: 0,
   padding: 0,

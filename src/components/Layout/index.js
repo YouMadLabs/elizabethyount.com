@@ -4,9 +4,9 @@ import Footer from '../Footer'
 const gridStyle = {
   minHeight: "100%",
   display: "grid",
-  "grid-template-columns": "50px repeat(3, minmax(1fr, max-content)) 50px",
-  "grid-template-rows": "50px auto 1fr auto 50px",
-  "grid-gap": "20px",
+  gridTemplateColumns: "50px repeat(3, minmax(1fr, max-content)) 50px",
+  gridTemplateRows: "50px auto 1fr auto 50px",
+  gridGap: "20px",
 };
 
 const Layout = (props) => (
@@ -21,7 +21,7 @@ const Layout = (props) => (
         box-sizing: border-box;
       }
       body {
-        background: white;
+        background: #f0e6e6;
       }
       html,
       body {

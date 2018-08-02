@@ -1,14 +1,13 @@
 import Link from "next/link";
-import fetch from "isomorphic-unfetch";
-import style from './style.css';
+import style from "./style.css";
 
 import Layout from "../components/Layout";
 
 const ProjectSection = ({ project }) => (
   <div>
-    <Link as={`/projects/${project.id}`} href={`/project?title=${project.id}`}>
+    <Link href={`/${project.id}`}>
       <div className="thumbnail">
-        <img src={project.image}/>
+        <img src={project.image} />
         <p> {project.title} </p>
       </div>
     </Link>
@@ -21,21 +20,11 @@ class Index extends React.Component {
     super(props);
   }
 
-  // componentDidMount = () => {
-  //   if ("serviceWorker" in navigator) {
-  //     navigator.serviceWorker
-  //       .register("/sw.js")
-  //       .catch(err => console.error("Service worker registration failed", err));
-  //   } else {
-  //     console.log("Service worker not supported");
-  //   }
-  // };
-
   render() {
     return (
       <Layout>
         {/* DOM */}
-        <div className="projects">
+        <div className="project">
           {getProjects().map(project => (
             <ProjectSection key={project.id} project={project} />
           ))}
@@ -43,7 +32,7 @@ class Index extends React.Component {
 
         {/* Styling */}
         <style jsx>{`
-          .projects {
+          .project {
             padding: 0;
             grid-column-start: 2;
             grid-column-end: 5;
@@ -64,40 +53,25 @@ function getProjects() {
   return [
     {
       id: "rac",
-      title: "REGIONAL ACCEPTANCE APP | BB&T",
+      title: "Regional Acceptance App | BB&T",
       image: "../static/thumbnails/rac-thumbnail.png"
     },
     {
       id: "salesforce-cpq",
-      title: "CPQ APP | SALESFORCE",
+      title: "CPQ App | Salesforce",
       image: "../static/thumbnails/cpq-thumbnail.png"
     },
     {
       id: "freelance",
-      title: "FREELANCE WORK",
+      title: "Freelance Work",
       image: "../static/thumbnails/freelance-thumbnail.png"
     },
-    // {
-    //   id: "ca",
-    //   title: "PROJECT MANAGEMENT APP | CA TECHNOLOGIES",
-    //   image: "../static/thumbnails/ca-thumbnail.png"
-    // },
     {
       id: "salesforce-promotions",
-      title: "PROMOTIONS APP | SALESFORCE",
+      title: "Promotions App | Salesforce",
       image: "../static/thumbnails/promotions-thumbnail.png"
     }
   ];
-  
 }
-
-Index.getInitialProps = async function() {
-  // const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
-  const data = []
-
-  return {
-    shows: data
-  };
-};
 
 export default Index;
