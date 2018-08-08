@@ -7,6 +7,7 @@ function ProgressiveHeader() {
     return (
       <Head>
         <link rel="manifest" href="manifest.json"/>
+        <title>Elizabeth Yount UX|UI</title>
 
         <meta name="mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
