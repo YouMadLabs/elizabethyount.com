@@ -1,6 +1,6 @@
 const serverConfig = {
   domain: 'elizabethyount.com',
-  progressive: true
+  progressive: false
 }
 
 module.exports = serverConfig;

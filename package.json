@@ -13,7 +13,7 @@
     "prod": "yarn build && NODE_ENV='production' yarn start",
     "build": "next build src",
     "start": "node server/index.js",
-    "start-prod": "NODE_ENV='production' yarn run build && forever start -c 'yarn start' ./",
+    "start-prod": "NODE_ENV='production' yarn run build && forever start --minUptime 10000 --spinSleepTime 30000 -c 'yarn start' ./",
     "stop-prod": "forever stop ./",
     "kill-dev": "kill -9 $(lsof -t -i:3000)"
   },
