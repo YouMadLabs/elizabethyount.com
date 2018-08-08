@@ -7,8 +7,8 @@
     "dev-hot": "NODE_ENV='development' && next src",
     "dev": "yarn build && NODE_ENV='development' yarn start",
     "prod": "yarn build && NODE_ENV='production' yarn start",
-    "build": "NODE_ENV='production' next build src",
-    "start": "NODE_ENV='production' node server/index.js",
+    "build": "next build src",
+    "start": "node server/index.js",
     "start-prod": "NODE_ENV='production' yarn run build && forever start -c 'yarn start' ./",
     "stop-prod": "forever stop ./",
     "kill-dev": "kill -9 $(lsof -t -i:3000)"
