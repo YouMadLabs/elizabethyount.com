@@ -13,7 +13,7 @@ const project = {
   text2: "Bringing educational content above the fold led to decreased drop-off rates.",
   image3: "../static/freelance/ab.png",
   heading3: "Alexis Bittar",
-  text3: "Alexis Bittar's checkout process was initially a long, one-page form. Conversions increased when I created a paginated flow with clear length expectations for Web and mobile (below).",
+  text3: "Alexis Bittar's checkout process was initially a long, one-page form. Conversions increased when I created a paginated flow with clear length expectations for Web and mobile.",
 };
 
 const style = {

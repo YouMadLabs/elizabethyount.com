@@ -2,6 +2,20 @@ const path = require('path');
 const glob = require('glob');
 const config = require('./config');
 
+// next.config.js
+module.exports = {
+  exportPathMap: function(defaultPathMap) {
+    return {
+      '/': { page: '/' },
+      '/about': { page: '/about' },
+      '/rac': { page: '/rac' },
+      '/freelance': { page: '/freelance' },
+      '/salesforce-cpq': { page: '/salesforce-cpq' },
+      '/salesforce-promotions': { page: '/salesforce-promotions' }
+    }
+  }
+}
+
 const pushRules = (nextConfig = {}, rules = {}) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
