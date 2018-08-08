@@ -18,14 +18,14 @@ const style = {
   gridColumn: "2 / span 3",
   gridRow: "2 / span 3",
   display: "inline-grid",
-  gridTemplateColumns: "50px 1fr 30px 1fr 30px 1fr 50px",
-  gridTemplateRows: "50px minmax(30px, auto) 1fr 30px 1fr 30px 1fr 50px",
+  gridTemplateColumns: "15% 1fr 30px 1fr 30px 1fr 15%",
+  gridTemplateRows: "100px minmax(30px, auto) 1fr 100px 1fr 100px 1fr 50px",
   whiteSpace: "pre-wrap",
   lineHeight: "1.7em",
 };
 
 const titleStyle = {
-  gridColumn: "1 / span 6",
+  gridColumn: "1 / span 7",
   gridRow: "1",
   textAlign: "center",
   textTransform: "initial",
@@ -43,6 +43,8 @@ const firstRightImageStyle = {
   gridRow: "3",
   height: "600px",
   width: "600px",
+  alignSelf: "center",
+  justifySelf: "center",
 };
 
 const rightTextStyle = {
@@ -57,6 +59,8 @@ const leftImageStyle = {
   gridRow: "5",
   height: "600px",
   width: "600px",
+  alignSelf: "center",
+  justifySelf: "center",
 };
 
 const secondLeftTextStyle = {
@@ -71,6 +75,8 @@ const secondRightImageStyle = {
   gridRow: "7",
   height: "600px",
   width: "600px",
+  alignSelf: "center",
+  justifySelf: "center",
 };
 
 export default () => (
