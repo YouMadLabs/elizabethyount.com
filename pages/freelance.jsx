@@ -1,4 +1,5 @@
 import Layout from '../components/layout'
+import ProjectStyles from "../css/project.scss"
 
 const project = {
   id: "freelance",
@@ -16,99 +17,33 @@ const project = {
   text3: "Alexis Bittar's checkout process was initially a long, one-page form. Conversions increased when I created a paginated flow with clear length expectations for Web and mobile.",
 };
 
-const style = {
-  gridColumn: "2 / span 3",
-  gridRow: "2 / span 3",
-  display: "inline-grid",
-  gridTemplateColumns: "15% 1fr 30px 1fr 30px 1fr 15%",
-  gridTemplateRows: "100px minmax(30px, auto) 1fr 100px 1fr 100px 1fr 50px",
-  whiteSpace: "pre-wrap",
-  lineHeight: "1.7em",
-};
-
-const titleStyle = {
-  gridColumn: "1 / span 7",
-  gridRow: "1",
-  textAlign: "center",
-  textTransform: "initial",
-  alignSelf: "center",
-};
-
-const messageStyle = {
-  gridColumn: "2 / span 5",
-  gridRow: "2",
-  textAlign: "center",
-  textTransform: "initial",
-};
-
-const firstLeftTextStyle = {
-  gridColumn: "2 / span 3",
-  gridRow: "3",
-  textAlign: "left",
-  textTransform: "initial",
-};
-
-const firstRightImageStyle = {
-  gridColumn: "6 / span 1",
-  gridRow: "3",
-  height: "600px",
-  width: "300px",
-  alignSelf: "center",
-  justifySelf: "center",
-};
-
-const rightTextStyle = {
-  gridColumn: "4 / span 3",
-  gridRow: "5",
-  textAlign: "left",
-  textTransform: "initial",
-};
-
-const leftImageStyle = {
-  gridColumn: "2 / span 1",
-  gridRow: "5",
-  height: "600px",
-  width: "400px",
-  alignSelf: "center",
-  justifySelf: "center",
-};
-
-const secondLeftTextStyle = {
-  gridColumn: "2 / span 3",
-  gridRow: "7",
-  textAlign: "left",
-  textTransform: "initial",
-};
-
-const secondRightImageStyle = {
-  gridColumn: "6 / span 1",
-  gridRow: "7",
-  height: "600px",
-  width: "300px",
-  alignSelf: "center",
-  justifySelf: "center",
-};
-
 export default () => (
   <Layout>
-    <div style={style}>
-      <h1 style={titleStyle}>{project.title}</h1>
-      <p style={messageStyle}>{project.message}</p>
-      <img src={project.image1} style={firstRightImageStyle}/>
-      <section style={firstLeftTextStyle}>
-        <h2>{project.heading1}</h2>
-        <p>{project.text1}</p>
-      </section>
-      <img src={project.image2} style={leftImageStyle}/>
-      <section style={rightTextStyle}>
-        <h2>{project.heading2}</h2>
-        <p>{project.text2}</p>
-      </section>
-      <img src={project.image3} style={secondRightImageStyle}/>
-      <section style={secondLeftTextStyle}>
-        <h2>{project.heading3}</h2>
-        <p>{project.text3}</p>
-      </section>
+    <h1 className="title">{project.title}</h1>
+    <p className="message">{project.message}</p>
+    <div className="content">
+      <article className="row row-first">
+        <img src={project.image1} className="image-right" />
+        <section className="text-left">
+          <h2>{project.heading1}</h2>
+          <p>{project.text1}</p>
+        </section>
+      </article>
+      <article className="row row-second">
+      <img src={project.image2} className="image-left" />
+        <section className="text-right">
+          <h2>{project.heading2}</h2>
+          <p>{project.text2}</p>
+        </section>
+      </article>
+      <article className="row row-third">
+        <img src={project.image3} className="image-right" />
+        <section className="text-left">
+          <h2>{project.heading3}</h2>
+          <p>{project.text3}</p>
+        </section>
+      </article>
     </div>
+    <style dangerouslySetInnerHTML={{__html: ProjectStyles}}/>
   </Layout>
-)
+);

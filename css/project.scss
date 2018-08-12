@@ -4,6 +4,15 @@
     text-align: center;
     text-transform: initial;
 }
+.message {
+    grid-column: 2 / span 5;
+    grid-row: 2;
+    text-align: center;
+    text-transform: initial;
+    white-space: pre-wrap;
+    line-height: 1.7em;
+    margin: 0px 25%;
+}
 .content {
     grid-column: 2 / span 5;
     grid-row: 2;
@@ -16,7 +25,7 @@
     }
 }
 .row {
-    margin: 30px 10%;
+    margin: 30px 10% 30px 10%;
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(2, minmax(500px, 1fr));
@@ -43,14 +52,16 @@
 .image-left {
     grid-row: 1;
     grid-column: 1;
-    width: 100%;
+    max-width: 100%;
+    max-height: 800px;
     align-self: center;
     justify-self: center;
 }
 .image-right {
     grid-row: 1;
     grid-column: 2;
-    width: 100%;
+    max-width: 100%;
+    max-height: 800px;
     align-self: center;
     justify-self: center;
 }
