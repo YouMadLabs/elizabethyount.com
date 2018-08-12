@@ -1,0 +1,34 @@
+@charset "UTF-8";
+$ionicons-font-path: "/fonts/ionicons" !default;
+$ionicons-font-family: "Ionicons" !default;
+$ionicons-version: "3.0.0-alpha.3" !default;
+@import "../node_modules/ionicons/dist/scss/ionicons";
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background: #f0e6e6;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Open Sans Semibold", Helvetica, Arial, sans-serif;
+  color: #333;
+  display: grid;
+}
+a {
+  color: #666;
+}
+a:hover {
+  opacity: 0.6;
+}
+ul {
+  margin: 0 0 0 0;
+}

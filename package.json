@@ -1,53 +1,76 @@
 {
-  "name": "elizabethyount.com",
+  "name": "ey",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/fawaad/nextjs-starter.git"
-  },
-  "description": "",
+  "description": "Elizabth Yount UI|UX",
+  "author": "YouMad Labs Inc.",
+  "repository": "https://github.com/iaincollins/nextjs-starter.git",
   "main": "index.js",
-  "scripts": {
-    "dev-hot": "NODE_ENV='development' && next src",
-    "dev": "yarn build && NODE_ENV='development' yarn start",
-    "prod": "yarn build && NODE_ENV='production' yarn start",
-    "build": "next build src",
-    "start": "node server/index.js",
-    "start-prod": "NODE_ENV='production' yarn run build && forever start --minUptime 10000 --spinSleepTime 30000 -c 'yarn start' ./",
-    "stop-prod": "forever stop ./",
-    "kill-dev": "kill -9 $(lsof -t -i:3000)"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^9.0.1",
-    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-core": "^6.26.3",
     "babel-plugin-wrap-in-js": "^1.1.1",
-    "compression": "^1.7.3",
-    "express": "^4.16.3",
-    "file-loader": "^1.1.11",
-    "forever": "^0.15.3",
-    "glob": "^7.1.2",
-    "http": "^0.0.0",
-    "https": "^1.0.0",
-    "image-webpack-loader": "^4.3.1",
-    "imagemin-webpack-plugin": "^2.2.0",
-    "isomorphic-unfetch": "^2.1.0",
-    "memory-cache": "^0.2.0",
+    "bootstrap": "^4.1.2",
+    "connect-mongo": "^2.0.1",
+    "dotenv": "^6.0.0",
+    "express-session": "^1.15.5",
+    "ionicons": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.2.1",
+    "mongodb": "^3.1.1",
+    "nedb": "^1.8.0",
     "next": "^6.1.1",
+    "next-auth": "^1.9.0",
     "node-sass": "^4.9.2",
-    "postcss-easy-import": "^3.0.0",
-    "postcss-loader": "^2.1.6",
+    "nodemailer": "^4.6.7",
+    "nodemailer-direct-transport": "^3.3.2",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "popper.js": "^1.14.3",
     "raw-loader": "^0.5.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.4.1",
+    "react-bootstrap-table": "^4.3.1",
+    "react-dom": "^16.4.1",
+    "react-syntax-highlighter": "^8.0.1",
+    "react-transition-group": "^2.4.0",
+    "reactstrap": "^6.3.0",
     "sass-loader": "^7.0.3",
-    "spdy": "^3.4.7",
-    "url-loader": "^1.0.1"
+    "universal-cookie": "^2.2.0"
   },
   "devDependencies": {
-    "image-trace-loader": "^0.1.0",
-    "sqip-loader": "^0.2.0"
+    "eslint": "^5.1.0",
+    "eslint-config-xo": "^0.23.0",
+    "eslint-config-xo-react": "^0.17.0",
+    "eslint-config-xo-space": "^0.19.0",
+    "eslint-plugin-react": "^7.10.0",
+    "xo": "^0.21.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+  "scripts": {
+    "test": "xo",
+    "dev": "NODE_ENV=development PORT=3000 node index.js",
+    "build": "next build",
+    "start": "node index.js",
+    "postinstall": "next build"
+  },
+  "engines": {
+    "node": "8.11.x"
+  },
+  "xo": {
+    "space:": 2,
+    "semicolon": false,
+    "extends": [
+      "xo-space",
+      "xo-react/space"
+    ],
+    "ignores": [
+      "next.config.js"
+    ]
+  },
+  "now": {
+    "name": "nextjs-starter",
+    "alias": "nextjs-starter.now.sh"
   }
 }
