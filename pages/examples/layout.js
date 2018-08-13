@@ -14,7 +14,7 @@ export default class extends Page {
         <h2 className="mt-3">Page Class</h2>
         <p>
           Most Pages in this project extend from the Page class 
-          in <a href="https://github.com/iaincollins/nextjs-starter/blob/master/components/page.js">components/page.js</a>,
+          in <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/components/page.js">components/page.js</a>,
           which extends from <span className="font-weight-bold">React.Component</span>.
         </p>
         <SyntaxHighlighter style={SyntaxHighlighterTheme} language="javascript">
@@ -53,7 +53,7 @@ export default class extends React.Component {
         <h2 className="mt-2">Layout Component</h2>
         <p>
           Pages in this project inherit common HTML components, such as the 
-          top navigation bar, by using the Layout component from  <a href="https://github.com/iaincollins/nextjs-starter/blob/master/components/layout.js">components/layout.js</a> which
+          top navigation bar, by using the Layout component from  <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/components/layout.js">components/layout.js</a> which
           wraps content with common HTML such as the navbar and footer.
         </p>
         <p>

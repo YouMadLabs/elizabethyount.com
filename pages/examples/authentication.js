@@ -66,7 +66,7 @@ EMAIL_PASSWORD=`}
         </p>
         <ul>
           <li>
-            <a href="https://github.com/iaincollins/nextjs-starter/blob/master/next-auth.config.js"><h4>next-auth.config.js</h4></a>
+            <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/next-auth.config.js"><h4>next-auth.config.js</h4></a>
             <p>
               Basic configuration of NextAuth is handled in <span className="font-weight-bold">next-auth.config.js</span>
             </p>
@@ -75,7 +75,7 @@ EMAIL_PASSWORD=`}
             </p>
           </li>
           <li>
-            <a href="https://github.com/iaincollins/nextjs-starter/blob/master/next-auth.functions.js"><h4>next-auth.functions.js</h4></a>
+            <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/next-auth.functions.js"><h4>next-auth.functions.js</h4></a>
             <p>
               <span className="font-weight-bold">next-auth.functions.js</span> defines functions for user management and sending email.
             </p>
@@ -93,7 +93,7 @@ EMAIL_PASSWORD=`}
             </p>
           </li>
           <li>
-            <a href="https://github.com/iaincollins/nextjs-starter/blob/master/next-auth.providers.js"><h4>next-auth.providers.js</h4></a>
+            <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/next-auth.providers.js"><h4>next-auth.providers.js</h4></a>
             <p>
               <span className="font-weight-bold">next-auth.providers.js</span> defines a list of supported oAuth providers.
             </p>
@@ -101,14 +101,14 @@ EMAIL_PASSWORD=`}
               It includes configuration examples for Facebook, Google and Twitter
               oAuth, which can easily be copied and replicated to add support
               for signing in other oAuth providers. For tips on configuring 
-              oAuth see <a href="https://github.com/iaincollins/nextjs-starter/blob/master/AUTHENTICATION.md">AUTHENTICATION.md</a>
+              oAuth see <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/AUTHENTICATION.md">AUTHENTICATION.md</a>
             </p>
           </li>
         </ul>
         <h2>Using NextAuth in Pages</h2>
         <p>
           Pages in this project extend from the <span className="font-weight-bold">Page</span> component 
-          in <a href="https://github.com/iaincollins/nextjs-starter/blob/master/components/page.js">components/page.js</a>.
+          in <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/components/page.js">components/page.js</a>.
         </p>
         <p>
           The Page component contains some logic <span className="font-weight-bold">getInitialProps()</span>, which is a special method triggered on page load with Next.js, to populate <span className="font-weight-bold">this.props.session</span> with

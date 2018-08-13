@@ -13,7 +13,7 @@ It includes the following features:
 * SCSS, with live reloading.
 * Comes with Ionicons icon font and shows how to bundle other CSS and fonts.
 
-You can see a live demo at **https://nextjs-starter.now.sh**
+You can see a live demo at **https://elizabethyount.com**
 
 ## About 
 

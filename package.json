@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Elizabth Yount UI|UX",
   "author": "YouMad Labs Inc.",
-  "repository": "https://github.com/iaincollins/nextjs-starter.git",
+  "repository": "https://github.com/YouMadLabs/elizabethyount.com.git",
   "main": "index.js",
   "dependencies": {
     "babel-core": "^6.26.3",
