@@ -54,9 +54,9 @@ export default class extends Page {
         </p>
         <h2>Configuring Routes</h2>
         <p>
-          We have a rule in <a href="https://github.com/iaincollins/nextjs-starter/blob/master/index.js">index.js</a> that
+          We have a rule in <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/index.js">index.js</a> that
           tells Express that any requests for <span className="font-weight-bold">/custom-route/{'{'}anything{'}'}</span> should
-          be handled by the template <a href="https://github.com/iaincollins/nextjs-starter/blob/master/pages/examples/routing.js">pages/examples/routing.js</a>, which is this page.
+          be handled by the template <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/pages/examples/routing.js">pages/examples/routing.js</a>, which is this page.
         </p>
         <SyntaxHighlighter style={SyntaxHighlighterTheme} language="javascript">
 {`express.get('/custom-route/:id', (req, res) => {
@@ -73,7 +73,7 @@ export default class extends Page {
   return nextRequestHandler(req, res)
 })`}</SyntaxHighlighter>
         <p>
-          Take a look at the source of <a href="https://github.com/iaincollins/nextjs-starter/blob/master/pages/examples/routing.js">this page</a> and <a href="https://github.com/iaincollins/nextjs-starter/blob/master/index.js">index.js</a> to see how
+          Take a look at the source of <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/pages/examples/routing.js">this page</a> and <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/index.js">index.js</a> to see how
           to use &lt;Link&gt; with custom routes.
         </p>
         <h2>Other Approaches</h2>
@@ -87,7 +87,7 @@ export default class extends Page {
         </p>
         <h2>Custom error pages</h2>
         <p>
-          If you want to see how custom 404, 500 and other HTTP errors are handled take a look at <a href="https://github.com/iaincollins/nextjs-starter/blob/master/pages/_error.js">pages/_error.js</a>.
+          If you want to see how custom 404, 500 and other HTTP errors are handled take a look at <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/pages/_error.js">pages/_error.js</a>.
         </p>
       </Layout>
     )

@@ -27,13 +27,13 @@ This project exists to make it easier to get started with creating universal app
 
 To get started, just clone the repository and run `npm install && npm run dev`:
 
-    git clone https://github.com/iaincollins/nextjs-starter.git
+    git clone https://github.com/YouMadLabs/elizabethyount.com.git
     npm install
     npm run dev
 
 Note: If you are running on Windows run install --noptional flag (i.e. `npm install --no-optional`) which will skip installing fsevents.
 
-## Building and deploying in production
+## Building production
 
 If you wanted to run this site in production, you should install modules then build the site with `npm run build` and run it with `npm start`:
 
@@ -45,11 +45,21 @@ You should run `npm run build` again any time you make changes to the site.
 
 Note: If you are already running a webserver on port 80 (e.g. Macs usually have the Apache webserver running on port 80) you can still start the example in production mode by passing a different port as an Environment Variable when starting (e.g. `PORT=3000 npm start`).
 
+## Deploying to production
+
+    now
+    now alias [value from previous command] elizabethyount.com
+
+Deployments do not automatically undeploy. Do the following to remove:
+
+    now ls
+    now rm [deployment to remove]
+
 ## Configuring
 
 If you configure a .env file (just copy [.env.default](https://github.com/iaincollins/nextjs-starter/blob/master/.env.default) over to '.env' and fill in the options) you can configure a range of options.
 
-See the [AUTHENTICATION.md](https://github.com/iaincollins/nextjs-starter/blob/master/AUTHENTICATION.md) for how to set up oAuth if you want to do that. It suggested you start with Twitter as it's the easiest to get working.
+See the [AUTHENTICATION.md](https://github.com/YouMadLabs/elizabethyount.com/blob/master/AUTHENTICATION.md) for how to set up oAuth if you want to do that. It suggested you start with Twitter as it's the easiest to get working.
 
 ## Deploying to the cloud with now.sh
 

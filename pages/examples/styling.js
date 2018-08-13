@@ -14,10 +14,10 @@ export default class extends Page {
         </p>
         <h2>SCSS and Webpack</h2>
         <p>
-          The file <a href="https://github.com/iaincollins/nextjs-starter/blob/master/css/index.scss">index.scss</a> imports <a href="https://getbootstrap.com/">Bootstrap</a> and <a href="https://ionicframework.com/docs/ionicons/">Ionicons</a> and defines additional global CSS.
+          The file <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/css/index.scss">index.scss</a> imports <a href="https://getbootstrap.com/">Bootstrap</a> and <a href="https://ionicframework.com/docs/ionicons/">Ionicons</a> and defines additional global CSS.
         </p>
         <p>
-          This is loaded and added to the page in <a href="https://github.com/iaincollins/nextjs-starter/blob/master/components/layout.js">components/layout.js</a>.
+          This is loaded and added to the page in <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/components/layout.js">components/layout.js</a>.
         </p>
         <SyntaxHighlighter style={SyntaxHighlighterTheme} language={"javascript"}>
 {`import Styles from '../css/index.scss'
@@ -35,7 +35,7 @@ export default class extends Page {
         </SyntaxHighlighter>
         <p>
           Being able to import SCSS/CSS like this is made possible with webpack
-          configuration in <a href="https://github.com/iaincollins/nextjs-starter/blob/master/next.config.js">next.config.js</a>.
+          configuration in <a href="https://github.com/YouMadLabs/elizabethyount.com/blob/master/next.config.js">next.config.js</a>.
         </p>
         <SyntaxHighlighter style={SyntaxHighlighterTheme} language={"javascript"}>
 {`config.module.rules.push(
