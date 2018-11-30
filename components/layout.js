@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Container } from 'reactstrap'
 import Styles from '../css/index.scss'
 import HeaderStyles from '../css/header.scss'
+import ReactGA from 'react-ga';
 
 const gridStyle = {
   minHeight: "100%",

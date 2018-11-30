@@ -69,7 +69,7 @@ module.exports = () => {
         // Used in callbak URLs and email sign in links. It will be auto 
         // generated if not specified, which may cause problems if your site 
         // uses multiple aliases (e.g. 'example.com and 'www.examples.com').
-        serverUrl: process.env.SERVER_URL || null,
+        serverUrl: process.env.SERVER_URL || 'www.elizabethyount.com' || 'elizabethyount.com' || null,
         // Add an Express Session store.
         expressSession: expressSession,
         sessionStore: sessionStore,
