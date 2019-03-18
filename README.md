@@ -1,10 +1,10 @@
-# New elizibethyount.com
+# New elizabethyount.com
 
 ## Running locally in development mode
 
 To get started, just clone the repository and run `npm install && gulp build`:
 
-    git clone https://github.com/Cidixat/elizabethyount.com
+    git clone https://github.com/YouMadLabs/elizabethyount.com
     npm install
     gulp build
 
