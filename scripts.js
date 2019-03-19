@@ -10,7 +10,7 @@
       } else {
         $.ajax({
           method: 'POST',
-          url: '//formspree.io/mike@boxheadcreative.com',
+          url: '//formspree.io/elizabethydesign@gmail.com',
           data: $('#contact-form').serialize(),
           datatype: 'json'
         });
